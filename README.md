@@ -1,4 +1,4 @@
 GnBnEuler
 =========
 
-Our solutions to Project Euler combining the practice with GIt
+Tag team solutions to Project Euler between GTWalford and BPWalford combining the practice with Git. 
