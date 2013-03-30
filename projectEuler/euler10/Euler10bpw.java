@@ -7,7 +7,7 @@ public class Euler10bpw {
 
 	public static void main(String[] args) {
 
-		long answer = 0L;
+		long answer = 0L; 
 
 		for(long i=2L; i<2000000; i++) {
 			if (is_prime(i) == true) {
