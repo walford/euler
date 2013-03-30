@@ -44,10 +44,10 @@ public class Euler12bpw {
 		}
 
 		out.println(answer);		
-
 	}
 
-	static ArrayList<Integer> get_prime_factors(ArrayList<Integer> list, int num) {
+	
+    static ArrayList<Integer> get_prime_factors(ArrayList<Integer> list, int num) {
 
         ArrayList<Integer> growing_list = new ArrayList<Integer>();
         growing_list = list;
@@ -66,6 +66,7 @@ public class Euler12bpw {
         return growing_list;
     }
 
+    
     static int num_factors(ArrayList<Integer> list) {
 
         int divisors = 1;
@@ -91,6 +92,7 @@ public class Euler12bpw {
         return divisors;
     }
 
+    
     static boolean is_prime(int num) {
         for(int i=2; i<=Math.sqrt(num); i++) {
             if(num % i == 0) {
