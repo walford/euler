@@ -1,21 +1,28 @@
+//Gtwalford's solution to Project Euler Problem 4
+
 import static java.lang.System.out;
 
 public class euler4gtw{
 
 public static void main(String[] argv){
 	int x = 0;
+	int y = 0;
 
-	for(int i = 1; i<=99; i++){
+	for(int i = 1; i<=1000; i++){
 
-		for(int j = 1; j<=99; j++){
+		for(int j = 1; j<=1000; j++){
 			x = i*j;
 			// out.println(x);
 
-			String pal = " " + x;
-			String lap = new StringBuilder(pal).reverse().toString();
+			String pal = "" + x;
+			String lap = new StringBuffer(pal).reverse().toString();
 
 			if(pal.equals(lap)){
+				if(x>y){
+				y = x;
 				out.println(i +" ++ " + j + " == " + pal + " // " + lap);
+				
+				}
 			}
 
 
@@ -25,11 +32,6 @@ public static void main(String[] argv){
 
 
 }//END MAIN
-
-// static boolean palindrome(String a, String b){
-
-
-// } //END PALINDROME
 
 
 }//END CLASS
