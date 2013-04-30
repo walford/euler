@@ -23,10 +23,9 @@ public class Euler14bpw {
 
 		// NOTE:
 		// Interestingly, the hashmap, while in theory should speed up the process, actually ends 
-		// up slowing down the programm. (Even so, I kept the code which utilizes the hashmap for
+		// up slowing down the programm. Even so, I kept the code which utilizes the hashmap for
 		// reference, but left it commented out. It only needs to be uncommented in order for it 
-		// to work again). After stuggling to get the hashmap to work as I wanted, I found that
-		// the trick to this exersice is actually using the proper data types.
+		// to work again.
 
 		long begin = System.currentTimeMillis();
 
@@ -38,13 +37,13 @@ public class Euler14bpw {
 
 	}
 
-	// ----------------------------------------------------------------------------------------- 
+	// ----------------------------------------------------------------------------------------------- 
 	// private Map<Integer, Integer> known;
 
 	// public Euler14() {
 	// 	this.known = new HashMap<Integer, Integer>();
 	// }
-	// ----------------------------------------------------------------------------------------- 
+	// ----------------------------------------------------------------------------------------------- 
 
 
 	public void run() {
@@ -63,12 +62,12 @@ public class Euler14bpw {
 				num = next_num(num);
 				count++;
 
-				// ----------------------------------------------------------------------------
+				// ------------------------------------------------------------------------
 				// if(known.containsKey(num) == true) {
 				// 	count += known.get(num);
 				// 	break;
 				// }
-				// -----------------------------------------------------------------------------
+				// ------------------------------------------------------------------------
 
 			}
 
