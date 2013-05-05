@@ -44,15 +44,15 @@ bool is_palin(int num1, int num2) {
 int reverse_int(int num) {
 
 	int one   = num % 10;
-	num       = num / 10;
+	num       /= 10;
 	int two   = num % 10;
-	num       = num / 10;
+	num       /= 10;
 	int three = num % 10;
-	num       = num / 10;
+	num       /= 10;
 	int four  = num % 10;
-	num       = num / 10;
+	num       /= 10;
 	int five  = num % 10;
-	num       = num / 10;
+	num       /= 10;
 	int six   = num;
 
 	one   *= 100000;
