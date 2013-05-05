@@ -11,7 +11,11 @@ int main() {
 
 	for(int i=100; i<1000; i++) {
 		for(int j=100; j<1000; j++) {
-			if(i * j > 99999) {
+			// The product of two three digit numbers is either 5 digits long or 6 digits
+			// long. Hence, the following conditional assumes that the correct answer is
+			// a 6 digit number. The purpose of filtering out the 5 digit numbers is to 
+			// simplify the reverse_int function.  
+			if(i * j > 99999) { 
 				if(is_palin(i, j) == true) {
 					if(i * j > answer) {
 						answer = i * j;
@@ -36,6 +40,7 @@ bool is_palin(int num1, int num2) {
 
 }
 
+// only works with a 6 digit number 
 int reverse_int(int num) {
 
 	int one   = num % 10;
