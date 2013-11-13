@@ -1,4 +1,6 @@
-euler
+- Project Euler Solutions
+By Gtwalford & Bpwalford
 =====
 
-Our solutions to Project Euler combining the practice with Git. Starting with Java. 
+Based on the mathematic / programming challenges on http://ProjectEuler.net
+
