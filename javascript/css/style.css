@@ -36,6 +36,10 @@ article p {
 	max-width: 600px;
 	width: 80%;
 }
+.centered {
+	text-align: center;
+	max-width: 500px;
+}
 
 .solution {
 	font-style: italic;
