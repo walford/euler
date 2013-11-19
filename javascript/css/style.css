@@ -30,16 +30,17 @@ article {
 	margin: 0 0 100px;
 }
 
-article h2 {
-	margin: 50px auto;
+article p {
+	margin: 15px auto;
 	font-size: 150%;
-	max-width: 500px;
+	max-width: 600px;
 	width: 80%;
 }
 
 .solution {
 	font-style: italic;
 	line-height: 200%;
+	margin: 50px auto;
 	text-align: center;
 	vertical-align: middle;
 }
