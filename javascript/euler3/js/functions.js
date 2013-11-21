@@ -4,10 +4,13 @@
 
 /* trigger when page is ready */
 $(document).ready(function (){
-	
-	var equation1 = (Math.PI * Math.pow(100, 1));
 
-	$('#result').html(equation1);
+	console.log('13105 % 5 = '+ 13105 % 5);
+	console.log('13105 % 7 = '+ 13105 % 7);
+	console.log('13105 % 13 = '+ 13105 % 13);
+	console.log('13105 % 29 = '+ 13105 % 29);
+
+	$('#result').html();
 
 });
 
