@@ -1,14 +1,23 @@
-// remap jQuery to $
-(function($){
 
-
-/* trigger when page is ready */
 $(document).ready(function (){
 	
-	var equation1 = (Math.PI * Math.pow(100, 1));
+	var x = 1,
+		y = 2,
+		evenSum = 0,
+		sum = 0;
 
-	$('#result').html(equation1);
+	while ( y <= 4000000 ) {
+		
+		sum = x + y;
+
+		if( y%2==0 ){
+			evenSum+= y;
+			console.log( y +' === '+evenSum);
+		}
+		x = y;
+		y = sum;
+	}
+
+	$('#result').html(evenSum);
 
 });
-
-})(window.jQuery);
