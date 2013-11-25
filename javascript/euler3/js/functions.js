@@ -4,13 +4,28 @@
 
 /* trigger when page is ready */
 $(document).ready(function (){
+	var num = 600851475143,
+		result,
+		temp;
 
-	console.log('13105 % 5 = '+ 13105 % 5);
-	console.log('13105 % 7 = '+ 13105 % 7);
-	console.log('13105 % 13 = '+ 13105 % 13);
-	console.log('13105 % 29 = '+ 13105 % 29);
+	for(var i = 1; i < Math.sqrt(num); i++) {
+		if( num % i == 0 && i % 1 == 0 ){
+			if( isPrime(i) ) {
+				result = i;
+			}
+		}
+	}
 
-	$('#result').html();
+	$('#result').html(result);
+
+	function isPrime (num) {
+		for(var j = 2; j < Math.sqrt(i); j++) {
+			if( i % j == 0 ){
+				return false;
+			}
+		}
+		return true;
+	}
 
 });
 
