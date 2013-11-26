@@ -4,10 +4,9 @@
 
 /* trigger when page is ready */
 $(document).ready(function (){
+	var result = 0;
 	
-	var equation1 = (Math.PI * Math.pow(100, 1));
-
-	$('#result').html(equation1);
+	$('#result').html(result);
 
 });
 
