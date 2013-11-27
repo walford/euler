@@ -4,22 +4,23 @@
 
 /* trigger when page is ready */
 $(document).ready(function (){
-	var num = 600851475143,
-		result,
-		temp;
+	var result = 0,
+		num = 2;
+		count = 0;
 
-	for(var i = 1; i < Math.sqrt(num); i++) {
-		if( num % i == 0 && i % 1 == 0 ){
-			if( isPrime(i) ) {
-				result = i;
-			}
+	while(count < 10001){
+		if( isPrime(num) ){
+			result = num;
+			count++;
 		}
+		num++;
 	}
 
+	
 	$('#result').html(result);
 
 	function isPrime (num) {
-		for(var j = 2; j < Math.sqrt(num); j++) {
+		for(var j = 2; j < num; j++) {
 			if( num % j == 0 ){
 				return false;
 			}
