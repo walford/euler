@@ -41,6 +41,13 @@ article p {
 	max-width: 500px;
 }
 
+.justified-center {
+	font-size: 13px;
+	max-width: 300px;
+	margin: 25px auto;
+	text-align: justify;
+}
+
 .solution {
 	font-style: italic;
 	line-height: 200%;
