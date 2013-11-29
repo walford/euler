@@ -19,7 +19,7 @@ $(document).ready(function (){
 	$('#result').html(result);
 
 	function isPrime (num) {
-		for(var j = 2; j < Math.sqrt(num); j++) {
+		for(var j = 2; j <= Math.sqrt(num); j++) {
 			if( num % j == 0 ){
 				return false;
 			}

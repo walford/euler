@@ -43,9 +43,14 @@ article p {
 
 .justified-center {
 	font-size: 13px;
-	max-width: 300px;
+	max-width: 400px;
 	margin: 25px auto;
 	text-align: justify;
+}
+
+.marked {
+	color: #FF0000;
+	font-weight: bold;
 }
 
 .solution {
@@ -68,7 +73,7 @@ article p {
 footer {
 	bottom: 0px;
 	margin: 50px 0;
-	position: absolute;
+	position: relative;
 }
 
 /* Print styles!
