@@ -11,9 +11,9 @@
 #
 #  How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
 
-require 'pry'
 
 $mondays_on_first = 0
+
 
 class PointInTime
 
@@ -30,60 +30,47 @@ class PointInTime
     self.month = months.first
   end
 
-
-  def incremente
-
-    puts "#{year} : #{month} : #{day} : #{month_day}"
+  def increment
 
     $mondays_on_first += 1 if (self.month_day == 1 && self.day == 'mon')
 
-    # increment day of week
     check_day(self.day, self.days)
 
-    # check leap year
     (self.year % 4 == 0) ? self.leap = true : self.leap = false
 
-    # increment february
-    if self.month == 'feb' && self.leap == true
-      if self.month_day >= 29
-        check_month(self.month, self.months)
+    if self.month == 'feb'
+      if self.leap == true
+        set_month_day(self.month_day, 29)
       else
-        self.month_day += 1
+        set_month_day(self.month_day, 28)
       end
+    elsif self.month == 'sep' || self.month == 'apr' || self.month == 'jun' || self.month == 'nov'
+      set_month_day(self.month_day, 30)
     else
-      if self.month_day >= 28
-        check_month(self.month, self.months)
-      else
-        self.month_day += 1
-      end
+      set_month_day(self.month_day, 31)
     end
 
-    # increment months other than february
-    if self.month == 'sep' || self.month == 'apr' || self.month == 'jun' || self.month == 'nov'
-      if self.month_day >= 30
-        check_month(self.month, self.months)
-      else
-        self.month_day += 1
-      end
-    elsif
-      if self.month_day >= 31
-        check_month(self.month, self.months)
-      else
-        self.month_day += 1
-      end
-    end
-
-    # increment year
     self.year += 1 if (self.month == 'dec' && self.month_day == 31)
 
   end
 
+  private # *******************************************************************
+
   def check_month(month, months)
-    month == months.last ? month = months.first : month = months[months.index(month)+1]
+    month == months.last ? self.month = months.first : self.month = months[months.index(month)+1]
   end
 
   def check_day(day, days)
-    day == days.last ? day = days.first : day = days[days.index(day)+1]
+    day == days.last ? self.day = days.first : self.day = days[days.index(day)+1]
+  end
+
+  def set_month_day(month_day, last_day)
+    if month_day >= last_day
+      check_month(self.month, self.months)
+      self.month_day = 1
+    else
+      self.month_day += 1
+    end
   end
 
 end
@@ -92,26 +79,12 @@ time = PointInTime.new(
   %w[mon tue wed thr fri sat sun],
   %w[jan feb mar apr may jun jul aug sep oct nov dec],
   false,
-  1900,
+  1901,
   1
 )
-# binding.pry
-# while time.year < 2000
-#   time.incremente
-# end
-100.times do
-  time.incremente
+
+while time.year < 2001
+  time.increment
 end
 
 puts $mondays_on_first
-
-
-
-
-
-
-
-
-
-
-# end
