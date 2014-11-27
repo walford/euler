@@ -25,13 +25,11 @@ class PointInTime
     self.leap = leap
     self.year = year
     self.month_day = month_day
-
     self.day = days.first
     self.month = months.first
   end
 
   def increment
-
     $mondays_on_first += 1 if (self.month_day == 1 && self.day == 'mon')
 
     check_day(self.day, self.days)
@@ -51,10 +49,11 @@ class PointInTime
     end
 
     self.year += 1 if (self.month == 'dec' && self.month_day == 31)
-
   end
 
-  private # *******************************************************************
+
+  private
+
 
   def check_month(month, months)
     month == months.last ? self.month = months.first : self.month = months[months.index(month)+1]
