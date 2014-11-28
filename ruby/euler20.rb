@@ -4,22 +4,21 @@
 # and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
 #
 # Find the sum of the digits in the number 100!
-require 'pry'
 
 start = 100
-answer = 1
+pre_answer = 1
 
 while start > 1
-  answer *= start
+  pre_answer *= start
   start -= 1
 end
 
-answer = answer.to_s
-answer = answer.split("")
-binding.pry
-foo = 0
-answer.each do |num|
-  foo += num.to_i
+pre_answer = pre_answer.to_s
+pre_answer = pre_answer.split("")
+
+answer = 0
+pre_answer.each do |num|
+  answer += num.to_i
 end
 
-puts foo
+puts answer
