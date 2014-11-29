@@ -17,7 +17,7 @@ class Number
     self.value = value
   end
 
-  def proper_divisors_sum
+  def divisors_sum
     divisors = []
     for i in 1..(value/2)
       self.value % i == 0 ? divisors << i : next
@@ -35,30 +35,49 @@ class Number
 
 end
 
-numbers = []
+def main
 
-for i in 1..10000
-  number = Number.new(i)
-  numbers << number
+  numbers = []
+
+  for i in 1..10000
+    n = Number.new(i)
+    numbers << {value: n.value, div_sum: n.divisors_sum}
+  end
+
+  numbers = get_amicable(numbers)
+
+  sum = get_sum(numbers)
+
+  puts sum
+
 end
 
+def get_amicable(numbers)
+  div_sums = []
+  numbers.each {|n| div_sums << n[:div_sum]}
 
-divisor_sums = []
+  amicable_nums = []
+  div_sums.each do |n|
+    div_sums.count(n) > 1 ? amicable_nums << n : next
+  end
 
-numbers.map {|n| divisor_sums << n.proper_divisors_sum}
+  amicable = []
+  numbers.each do |num|
+    amicable_nums.include?(num[:div_sum]) ? amicable << num : next
+  end
 
-
-amicable_nums = []
-
-divisor_sums.map do |n|
-  divisor_sums.count(n) > 1 ? amicable_nums << n : next
+  amicable
 end
 
-sum = 0
-amicable_nums.each {|n| sum += n}
+def get_sum(numbers)
+  sum = 0
 
-puts sum
+  numbers.each {|n| sum += n[:value]}
 
+  sum
+end
+
+main
 
 
 
