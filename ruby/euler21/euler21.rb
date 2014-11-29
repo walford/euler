@@ -41,7 +41,6 @@ def get_amicable(numbers)
   numbers.each do |num|
     if numbers.include?({value: num[:div_sum], div_sum: num[:value]}) && num[:div_sum] != num[:value]
       amicable << num
-      puts "#{num} => #{{value: num[:div_sum], div_sum: num[:value]}}"
     end
   end
 
@@ -54,24 +53,3 @@ def get_sum(numbers)
   numbers.each {|n| sum += n[:value]}
   sum
 end
-
-
-puts "calculating amicable pairs below 10000"
-puts "\n--------------------------------------"
-
-numbers = []
-
-for i in 1..9999
-  n = Number.new(i)
-  numbers << {value: n.value, div_sum: n.divisors_sum}
-end
-
-numbers = get_amicable(numbers)
-
-puts "--------------------------------------"
-puts "\ncalculation complete"
-
-sum = get_sum(numbers)
-
-puts "sum of amicable numbers below 10000 is:"
-puts sum
