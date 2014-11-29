@@ -7,7 +7,6 @@
 # 142; so d(284) = 220.
 #
 # Evaluate the sum of all the amicable numbers under 10000.
-require 'pry'
 
 class Number
 
@@ -35,55 +34,44 @@ class Number
 
 end
 
-def get_amicable(numbers)
-  div_sums = []
-  numbers.each {|n| div_sums << n[:div_sum]}
-  binding.pry
-  amicable_nums = []
-  div_sums.each do |n|
-    div_sums.count(n) > 1 ? amicable_nums << n : next
-  binding.pry
-  end
 
+def get_amicable(numbers)
   amicable = []
+
   numbers.each do |num|
-    amicable_nums.include?(num[:div_sum]) ? amicable << num : next
+    if numbers.include?({value: num[:div_sum], div_sum: num[:value]}) && num[:div_sum] != num[:value]
+      amicable << num
+      puts "#{num} => #{{value: num[:div_sum], div_sum: num[:value]}}"
+    end
   end
 
   amicable
 end
 
+
 def get_sum(numbers)
   sum = 0
-
   numbers.each {|n| sum += n[:value]}
-
   sum
 end
 
+
+puts "calculating amicable pairs below 10000"
+puts "\n--------------------------------------"
+
 numbers = []
 
-for i in 1..10000
+for i in 1..9999
   n = Number.new(i)
   numbers << {value: n.value, div_sum: n.divisors_sum}
 end
 
 numbers = get_amicable(numbers)
 
+puts "--------------------------------------"
+puts "\ncalculation complete"
+
 sum = get_sum(numbers)
 
+puts "sum of amicable numbers below 10000 is:"
 puts sum
-
-
-
-
-
-
-
-
-
-
-
-
-
-# end

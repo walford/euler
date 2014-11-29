@@ -27,14 +27,8 @@ class TestEuler < Minitest::Test
   end
 
   def test_get_amicable
-    nums = [{num: 220, value: 284}, {num: 284, value: 220}]
-    assert_equal(nums, get_amicable(nums))
+    nums = [{value: 220, div_sum: 284}, {value: 284, div_sum: 220}, {value: 10, div_sum: 8}]
+    assert_equal([{value: 220, div_sum: 284}, {value: 284, div_sum: 220}], get_amicable(nums))
   end
 
 end
-
-10
-
-5
-2
-1
