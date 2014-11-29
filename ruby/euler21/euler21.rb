@@ -35,30 +35,14 @@ class Number
 
 end
 
-def main
-
-  numbers = []
-
-  for i in 1..10000
-    n = Number.new(i)
-    numbers << {value: n.value, div_sum: n.divisors_sum}
-  end
-
-  numbers = get_amicable(numbers)
-
-  sum = get_sum(numbers)
-
-  puts sum
-
-end
-
 def get_amicable(numbers)
   div_sums = []
   numbers.each {|n| div_sums << n[:div_sum]}
-
+  binding.pry
   amicable_nums = []
   div_sums.each do |n|
     div_sums.count(n) > 1 ? amicable_nums << n : next
+  binding.pry
   end
 
   amicable = []
@@ -77,7 +61,18 @@ def get_sum(numbers)
   sum
 end
 
-main
+numbers = []
+
+for i in 1..10000
+  n = Number.new(i)
+  numbers << {value: n.value, div_sum: n.divisors_sum}
+end
+
+numbers = get_amicable(numbers)
+
+sum = get_sum(numbers)
+
+puts sum
 
 
 
